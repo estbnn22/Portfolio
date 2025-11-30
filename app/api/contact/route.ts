@@ -33,7 +33,6 @@ ${message}
       `.trim(),
     });
 
-    // redirect back to homepage with ?sent=1 so we can show the success banner
     return NextResponse.redirect(new URL("/?sent=1", req.url));
   } catch (error) {
     console.error("Contact form error:", error);
