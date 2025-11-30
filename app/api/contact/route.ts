@@ -1,4 +1,3 @@
-// app/api/contact/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -33,7 +32,9 @@ ${message}
       `.trim(),
     });
 
-    return NextResponse.redirect(new URL("/?sent=1", req.url));
+    return NextResponse.redirect(new URL("/?sent=1", req.url), {
+      status: 303,
+    });
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
