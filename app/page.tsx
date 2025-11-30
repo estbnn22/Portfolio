@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { SkillCard } from "./components/skillCard";
 import Link from "next/link";
@@ -123,7 +123,7 @@ const skillItems = [
   },
 ];
 
-export default function HomePage() {
+function HomePageContent() {
   const controls = useAnimation();
   const searchParams = useSearchParams();
   const sent = searchParams.get("sent") === "1";
@@ -170,7 +170,7 @@ export default function HomePage() {
             onClick={() =>
               window.open("/Esteban_Machuca_Resume_EstebanMCodes.pdf", "_blank")
             }
-            className=" md:block rounded-full border border-yellow-400/60 bg-white/5 px-4 py-1 text-sm text-yellow-300 hover:bg-yellow-400 hover:text-black transition"
+            className="md:block rounded-full border border-yellow-400/60 bg-white/5 px-4 py-1 text-sm text-yellow-300 hover:bg-yellow-400 hover:text-black transition"
           >
             Resume
           </button>
@@ -560,5 +560,13 @@ export default function HomePage() {
         </footer>
       </main>
     </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#050816]" />}>
+      <HomePageContent />
+    </Suspense>
   );
 }
