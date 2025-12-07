@@ -156,7 +156,7 @@ function HomePageContent() {
             Esteban<span className="text-yellow-400">MCodes</span>
           </button>
           <div className="hidden gap-6 text-sm text-slate-300 md:flex">
-            {["projects", "skills", "about", "contact"].map((id) => (
+            {["projects", "skills", "goals" ,"about", "contact" ].map((id) => (
               <button
                 key={id}
                 onClick={() => scrollToId(id)}
@@ -410,47 +410,151 @@ function HomePageContent() {
           </div>
         </motion.section>
 
+{/* Goals */}
+<motion.section
+  id="goals"
+  initial="hidden"
+  animate={controls}
+  variants={sectionVariant}
+  transition={{ duration: 0.7, delay: 0.15 }}
+  className="mt-16 scroll-mt-24"
+>
+  <h2 className="text-2xl font-semibold text-slate-50">Goals</h2>
+
+  <div className="mt-6 grid gap-8 md:grid-cols-[1.2fr,1fr] items-start">
+    {/* Narrative */}
+    <div className="space-y-4 text-sm text-slate-300">
+      <p>
+        I’m actively leveling up as a full-stack developer and building real projects
+        that solve practical problems. Right now I’m focused on writing clean,
+        maintainable code and becoming confident across the entire stack—from database
+        to UI.
+      </p>
+      <p>
+        My next big step is to join a team as a junior developer where I can contribute
+        to production code, learn from more experienced engineers, and keep sharpening
+        my skills through real-world challenges.
+      </p>
+
+      <div className="flex flex-wrap gap-2 pt-2">
+        <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+          Full-time junior role
+        </span>
+        <span className="rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-300">
+          Strong fundamentals
+        </span>
+        <span className="rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300">
+          Real-world projects
+        </span>
+      </div>
+    </div>
+
+    {/* Goal cards */}
+    <div className="space-y-4">
+      <div className="rounded-xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-lg shadow-slate-900/40">
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+          Learning Focus
+        </p>
+        <h3 className="mt-1 text-sm font-semibold text-slate-50">
+          Become comfortable with Python
+        </h3>
+        <ul className="mt-3 space-y-1 text-xs text-slate-300">
+          <li>• Build small scripts and utilities</li>
+          <li>• Learn backend patterns and APIs</li>
+          <li>• Explore automations and tooling</li>
+        </ul>
+      </div>
+
+      <div className="rounded-xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-lg shadow-slate-900/40">
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+          Career Goals
+        </p>
+        <h3 className="mt-1 text-sm font-semibold text-slate-50">
+          Land a full-time junior developer role
+        </h3>
+        <ul className="mt-3 space-y-1 text-xs text-slate-300">
+          <li>• Ship production-ready features with a team</li>
+          <li>• Grow under mentorship from senior devs</li>
+          <li>• Keep improving my portfolio & code quality</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</motion.section>
+
         {/* ABOUT */}
-        <motion.section
-          id="about"
-          initial="hidden"
-          animate={controls}
-          variants={sectionVariant}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-16 scroll-mt-24"
-        >
-          <h2 className="text-2xl font-semibold text-slate-50">About Me</h2>
+<motion.section
+  id="about"
+  initial="hidden"
+  animate={controls}
+  variants={sectionVariant}
+  transition={{ duration: 0.7, delay: 0.15 }}
+  className="mt-16 scroll-mt-24"
+>
+  <h2 className="text-2xl font-semibold text-slate-50">About Me</h2>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <div className="space-y-3 text-sm text-slate-300">
-              <p>
-                I&apos;m a full-stack developer who loves building real,
-                practical applications — appointment systems, dashboards,
-                inventory tools, and anything that improves how people work.
-              </p>
-              <p>
-                I work mainly with Next.js, Prisma, PostgreSQL, and Tailwind,
-                and I really enjoy both the{" "}
-                <span className="font-semibold">backend logic</span> and the{" "}
-                <span className="font-semibold">frontend experience</span>.
-              </p>
-            </div>
+  <div className="mt-6 grid gap-8 md:grid-cols-[1.2fr,1fr] items-start">
+    {/* Narrative */}
+    <div className="space-y-4 text-sm text-slate-300">
+      <p>
+        I&apos;m a full-stack developer who enjoys turning real problems into 
+        working products — booking systems for small businesses, dashboards, 
+        inventory tools, and planning apps that people actually want to use.
+      </p>
+      <p>
+        My main stack is{" "}
+        <span className="font-semibold">Next.js</span>,{" "}
+        <span className="font-semibold">Prisma</span>,{" "}
+        <span className="font-semibold">PostgreSQL</span>, and{" "}
+        <span className="font-semibold">Tailwind CSS</span>. I like owning the
+        full flow: designing the data model, implementing clean backend logic,
+        and building UIs that feel smooth and intuitive on both desktop and
+        mobile.
+      </p>
+      <p>
+        I care a lot about code that&apos;s easy to understand, easy to extend,
+        and backed by real use cases — not just tutorial projects.
+      </p>
 
-            <div className="space-y-3 text-sm text-slate-300">
-              <p>
-                I’m still learning every day and always exploring new tools,
-                patterns, and best practices. I like taking ideas from the first
-                sketch all the way to production — planning the data model,
-                designing the UI, building the features, and deploying on
-                Vercel.
-              </p>
-              <p>
-                My goal is to keep improving, keep learning, and keep building
-                things that feel good to use.
-              </p>
-            </div>
-          </div>
-        </motion.section>
+      <div className="flex flex-wrap gap-2 pt-2">
+        <span className="rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-300">
+          Full-stack web apps
+        </span>
+        <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+          Real-world projects
+        </span>
+        <span className="rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300">
+          Clean, maintainable code
+        </span>
+      </div>
+    </div>
+
+    {/* Snapshot / Focus */}
+    <div className="space-y-4 text-sm text-slate-300">
+      <div className="rounded-xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-lg shadow-slate-900/40">
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+          What I&apos;ve been building
+        </p>
+        <ul className="mt-3 space-y-1.5 text-xs">
+          <li>• An appointment booking system for a local grooming business</li>
+          <li>• A notes + planner dashboard with drag-and-drop boards</li>
+          <li>• An inventory manager with low-stock alerts and activity logs</li>
+        </ul>
+      </div>
+
+      <div className="rounded-xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-lg shadow-slate-900/40">
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+          Currently focused on
+        </p>
+        <ul className="mt-3 space-y-1.5 text-xs">
+          <li>• Sharpening my backend skills and database design</li>
+          <li>• Improving UX and interaction details in my UIs</li>
+          <li>• Preparing to contribute to a production codebase as a junior dev</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</motion.section>
 
         {/* CONTACT */}
         <motion.section
