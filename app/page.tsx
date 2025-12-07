@@ -140,7 +140,7 @@ function HomePageContent() {
 
   return (
     <div className="min-h-screen bg-[#050816] text-slate-100">
-      {/* Background gradient blobs */}
+      {/* Background gradient blobs  */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute -top-32 -left-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-yellow-500/10 blur-3xl" />
