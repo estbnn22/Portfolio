@@ -168,7 +168,7 @@ function HomePageContent() {
           </div>
           <button
             onClick={() =>
-              window.open("/Esteban_Machuca_Resume_EstebanMCodes.pdf", "_blank")
+              window.open("/Esteban_Machuca_Resume.pdf", "_blank")
             }
             className="md:block rounded-full border border-yellow-400/60 bg-white/5 px-4 py-1 text-sm text-yellow-300 hover:bg-yellow-400 hover:text-black transition"
           >
@@ -240,7 +240,7 @@ function HomePageContent() {
                 Contact Me
               </button>
               <a
-                href="/Esteban_Machuca_Resume_EstebanMCodes.pdf"
+                href="/Esteban_Machuca_Resume.pdf"
                 download
                 className="rounded-full border border-yellow-400/60 bg-black/40 px-6 py-2 text-sm font-medium text-yellow-300 transition hover:bg-yellow-400 hover:text-black hover:cursor-pointer"
               >
