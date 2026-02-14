@@ -222,50 +222,6 @@ export default function SupportPage() {
               </Card>
             </div>
 
-            <div className="mt-10" id="faq">
-              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-white">
-                FAQs
-              </h2>
-              <div className="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
-                <Card title="Why does the store say “Not ready”?">
-                  <p>
-                    This can happen if Apple hasn’t finished processing a build
-                    or if subscription products aren’t available in your current
-                    test environment yet.
-                  </p>
-                  <p>
-                    If you’re testing via TestFlight, ensure you’re on the
-                    latest build and try again later.
-                  </p>
-                </Card>
-
-                <Card title="How do I restore purchases?">
-                  <p>
-                    In the app, use{" "}
-                    <span className="text-white/85">Restore Purchases</span> (if
-                    available). You can also manage subscriptions in iOS
-                    Settings.
-                  </p>
-                </Card>
-
-                <Card title="My data looks wrong or missing.">
-                  <p>
-                    First, confirm you’re signed into the correct account. If
-                    the issue persists, contact support with your account email
-                    and a screenshot.
-                  </p>
-                </Card>
-
-                <Card title="Can I export my workouts?">
-                  <p>
-                    Export features may be added in future versions. If you need
-                    something specific, email support and include what format
-                    you want (CSV, PDF, etc.).
-                  </p>
-                </Card>
-              </div>
-            </div>
-
             <div className="mt-10">
               <div className="rounded-2xl border border-white/10 bg-white/3 px-5 py-4">
                 <p className="text-xs sm:text-sm text-white/60 leading-5">
