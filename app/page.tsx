@@ -14,45 +14,36 @@ const sectionVariant = {
 
 const projects = [
   {
-    title: "4Dogs Grooming",
-    subtitle: "Booking System for a Local Groomer",
+    title: "TrackForge",
+    subtitle: "React Native Workout Tracker",
     description:
-      "Full-stack app with authentication, appointment booking, email notifications, and admin dashboard.",
+      "Mobile fitness app for logging workouts, following routines, tracking streaks and PRs, and turning training data into clear progress insights.",
+    tech: ["React Native", "Convex", "RevenueCat"],
+    featured: true,
+    links: {
+      live: "https://www.trackforge.app/",
+      github: null,
+    },
+  },
+  {
+    title: "4Dogs Grooming",
+    subtitle: "Booking Platform for a Local Groomer",
+    description:
+      "Full-stack scheduling app with authentication, appointment flows, email notifications, and admin tools for managing a real local business.",
     tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "Stack Auth"],
+    featured: false,
     links: {
       live: "https://www.4dogsgrooming.org/",
       github: "https://github.com/estbnn22/4Dogs",
     },
   },
   {
-    title: "FlowNote",
-    subtitle: "Interactive dashboard with live todo toggles",
+    title: "JG Detailing",
+    subtitle: "Front-End Website for a Car Detailing Brand",
     description:
-      "Full-stack app with authentication, todo list, live updates, and planner.",
-    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "Stack Auth"],
-    links: {
-      live: "https://flow-note-eta.vercel.app/",
-      github: "https://github.com/estbnn22/FlowNote",
-    },
-  },
-  {
-    title: "Inventory Manager",
-    subtitle: "Simple Inventory CRUD",
-    description:
-      "Track products, quantities, and low-stock alerts with activity logs and clean UI.",
-    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "Stack Auth"],
-    links: {
-      live: "https://inventory-one-eosin.vercel.app/",
-      github: "https://github.com/estbnn22/Inventory",
-    },
-  },
-
-  {
-    title: "JG Detailing — My First Ever Project",
-    subtitle: "Car Detailing Website | Front-End",
-    description:
-      "A clean car-detailing landing page built from scratch before I learned full-stack development.",
+      "The first project I shipped from scratch, focused on responsive layout, clear marketing copy, and a polished online presence for a small business.",
     tech: ["HTML", "CSS", "JavaScript"],
+    featured: false,
     links: {
       live: "https://jgdetailing.org/",
       github: "https://github.com/estbnn22/JGdetailing",
@@ -85,6 +76,11 @@ const skillItems = [
     name: "React",
     logo: "/react.png",
     level: "Intermediate",
+  },
+  {
+    name: "React Native",
+    logo: "/react-native.svg",
+    level: "Advanced",
   },
   {
     name: "TypeScript",
@@ -210,16 +206,16 @@ function HomePageContent() {
               <span className="text-yellow-400">Esteban Machuca</span>.
             </h1>
             <p className="mt-4 text-lg text-slate-300">
-              I build modern full-stack web apps with{" "}
+              I build full-stack web and mobile products with{" "}
               <span className="font-semibold text-slate-100">
-                Next.js, Prisma, and PostgreSQL
+                Next.js, React Native, Prisma, and PostgreSQL
               </span>
               , focused on real business logic, clean UI, and smooth user
-              experience.
+              experience across both desktop and mobile.
             </p>
             <p className="mt-3 text-sm text-slate-400">
-              From booking systems to inventory tools, I love turning real small
-              business needs into polished products.
+              From booking systems to workout tracking, I love turning real
+              user needs into polished, usable products.
             </p>
             <p className="mt-3 text-sm text-slate-400">
               I’m especially interested in{" "}
@@ -267,34 +263,40 @@ function HomePageContent() {
                 Tech Stack
               </p>
               <p className="mt-1 text-sm text-slate-100">
-                Next.js · Prisma · PostgreSQL · Tailwind · Stack Auth
+                Next.js · React Native · Prisma · PostgreSQL · Convex
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="flex items-center justify-between rounded-2xl border border-purple-500/40 bg-purple-500/10 p-4 shadow-lg"
+              className="flex items-center justify-between gap-4 rounded-2xl border border-sky-500/40 bg-sky-500/10 p-4 shadow-lg"
             >
-              <Link href="https://4dogsgrooming.org">
+              <Link
+                href="https://www.trackforge.app/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="min-w-0 flex-1"
+              >
                 <div>
                   <p className="text-xs uppercase tracking-wide text-slate-300">
                     Featured Project
                   </p>
                   <p className="text-sm font-semibold text-slate-50">
-                    4Dogs Grooming
+                    TrackForge
                   </p>
                   <p className="text-xs text-slate-300">
-                    Booking system with email notifications
+                    React Native workout tracker with routines, streaks, and
+                    progress insights
                   </p>
                 </div>
               </Link>
-              <div className="h-14 w-14 rounded-full overflow-hidden border border-purple-300/60 shadow-md">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-sky-300/50 bg-slate-950/80 shadow-md">
                 <Image
-                  src="/my-app.png"
-                  alt="App thumbnail"
-                  width={56}
-                  height={56}
-                  className="object-cover h-full w-full"
+                  src="/react-native.svg"
+                  alt="React Native logo"
+                  width={44}
+                  height={44}
+                  className="object-contain"
                 />
               </div>
             </motion.div>
@@ -334,7 +336,8 @@ function HomePageContent() {
             <div>
               <h2 className="text-2xl font-semibold text-slate-50">Projects</h2>
               <p className="text-sm text-slate-400">
-                Real full-stack apps with real features.
+                Real products built around actual user needs, from mobile
+                fitness tracking to small-business booking flows.
               </p>
             </div>
           </div>
@@ -348,13 +351,28 @@ function HomePageContent() {
                   scale: 1.01,
                   boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
                 }}
-                className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 transition"
+                className={`group flex flex-col justify-between rounded-2xl p-5 transition ${
+                  project.featured
+                    ? "border border-sky-400/30 bg-[linear-gradient(135deg,rgba(14,165,233,0.14),rgba(255,255,255,0.04),rgba(2,6,23,0.92))] md:col-span-2"
+                    : "border border-white/10 bg-white/5"
+                }`}
               >
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-50">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs text-slate-400">{project.subtitle}</p>
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-50">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs text-slate-400">
+                        {project.subtitle}
+                      </p>
+                    </div>
+                    {project.featured ? (
+                      <span className="rounded-full border border-sky-300/30 bg-sky-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-sky-200">
+                        Featured
+                      </span>
+                    ) : null}
+                  </div>
                   <p className="mt-3 text-sm text-slate-300">
                     {project.description}
                   </p>
@@ -376,16 +394,18 @@ function HomePageContent() {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    Live Demo
+                    Visit Project
                   </a>
-                  <a
-                    href={project.links.github}
-                    className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium text-slate-100 transition hover:bg-white/10"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    View Code
-                  </a>
+                  {project.links.github ? (
+                    <a
+                      href={project.links.github}
+                      className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium text-slate-100 transition hover:bg-white/10"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      View Code
+                    </a>
+                  ) : null}
                 </div>
               </motion.article>
             ))}
@@ -428,27 +448,24 @@ function HomePageContent() {
             {/* Narrative */}
             <div className="space-y-4 text-sm text-slate-300">
               <p>
-                I’m actively leveling up as a full-stack developer and building
-                real projects that solve practical problems. Right now I’m
-                focused on writing clean, maintainable code and becoming
-                confident across the entire stack—from database to UI.
+                I&apos;m focused on getting better by building real products and
+                improving how I write code from backend logic to UI polish.
               </p>
               <p>
-                My next big step is to join a team as a junior developer where I
-                can contribute to production code, learn from more experienced
-                engineers, and keep sharpening my skills through real-world
-                challenges.
+                Right now, my main goal is to land a junior full-stack or
+                front-end role where I can contribute, keep learning, and grow
+                with a team.
               </p>
 
               <div className="flex flex-wrap gap-2 pt-2">
                 <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
-                  Full-time junior role
+                  Junior role
                 </span>
                 <span className="rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-300">
-                  Strong fundamentals
+                  Web + mobile
                 </span>
                 <span className="rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300">
-                  Real-world projects
+                  Better fundamentals
                 </span>
               </div>
             </div>
@@ -460,12 +477,12 @@ function HomePageContent() {
                   Learning Focus
                 </p>
                 <h3 className="mt-1 text-sm font-semibold text-slate-50">
-                  Become comfortable with Python
+                  Keep sharpening my full-stack skills
                 </h3>
                 <ul className="mt-3 space-y-1 text-xs text-slate-300">
-                  <li>• Build small scripts and utilities</li>
-                  <li>• Learn backend patterns and APIs</li>
-                  <li>• Explore automations and tooling</li>
+                  <li>• Write cleaner backend logic and data models</li>
+                  <li>• Build more polished mobile and web UI</li>
+                  <li>• Keep improving how I structure real projects</li>
                 </ul>
               </div>
 
@@ -474,12 +491,12 @@ function HomePageContent() {
                   Career Goals
                 </p>
                 <h3 className="mt-1 text-sm font-semibold text-slate-50">
-                  Land a full-time junior developer role
+                  Join a team and ship useful software
                 </h3>
                 <ul className="mt-3 space-y-1 text-xs text-slate-300">
-                  <li>• Ship production-ready features with a team</li>
-                  <li>• Grow under mentorship from senior devs</li>
-                  <li>• Keep improving my portfolio & code quality</li>
+                  <li>• Contribute to real production features</li>
+                  <li>• Learn from experienced developers</li>
+                  <li>• Keep growing through real-world work</li>
                 </ul>
               </div>
             </div>
@@ -501,35 +518,34 @@ function HomePageContent() {
             {/* Narrative */}
             <div className="space-y-4 text-sm text-slate-300">
               <p>
-                I&apos;m a full-stack developer who enjoys turning real problems
-                into working products — booking systems for small businesses,
-                dashboards, inventory tools, and planning apps that people
-                actually want to use.
+                I&apos;m a developer who likes building useful products for real
+                people. This portfolio is focused on the work that best
+                represents where my skills are right now.
               </p>
               <p>
                 My main stack is <span className="font-semibold">Next.js</span>,{" "}
+                <span className="font-semibold">React Native</span>,{" "}
                 <span className="font-semibold">Prisma</span>,{" "}
-                <span className="font-semibold">PostgreSQL</span>, and{" "}
-                <span className="font-semibold">Tailwind CSS</span>. I like
-                owning the full flow: designing the data model, implementing
-                clean backend logic, and building UIs that feel smooth and
-                intuitive on both desktop and mobile.
+                <span className="font-semibold">PostgreSQL</span>,{" "}
+                <span className="font-semibold">Tailwind CSS</span>, and{" "}
+                <span className="font-semibold">Convex</span>. I enjoy working
+                across the stack and making things feel clean, simple, and
+                reliable.
               </p>
               <p>
-                I care a lot about code that&apos;s easy to understand, easy to
-                extend, and backed by real use cases — not just tutorial
-                projects.
+                I&apos;m still early in my career, but I care a lot about clear
+                UI, solid fundamentals, and projects that solve real problems.
               </p>
 
               <div className="flex flex-wrap gap-2 pt-2">
                 <span className="rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-300">
-                  Full-stack web apps
+                  Web + mobile
                 </span>
                 <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
                   Real-world projects
                 </span>
                 <span className="rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300">
-                  Clean, maintainable code
+                  Clean UI
                 </span>
               </div>
             </div>
@@ -542,15 +558,13 @@ function HomePageContent() {
                 </p>
                 <ul className="mt-3 space-y-1.5 text-xs">
                   <li>
-                    • An appointment booking system for a local grooming
-                    business
+                    • TrackForge, a workout tracking app built with React Native
                   </li>
                   <li>
-                    • A notes + planner dashboard with drag-and-drop boards
+                    • A booking platform for a local grooming business
                   </li>
                   <li>
-                    • An inventory manager with low-stock alerts and activity
-                    logs
+                    • Small business sites and personal portfolio work
                   </li>
                 </ul>
               </div>
@@ -560,11 +574,10 @@ function HomePageContent() {
                   Currently focused on
                 </p>
                 <ul className="mt-3 space-y-1.5 text-xs">
-                  <li>• Sharpening my backend skills and database design</li>
-                  <li>• Improving UX and interaction details in my UIs</li>
+                  <li>• Improving my React Native and Next.js skills</li>
+                  <li>• Writing cleaner backend logic and database structure</li>
                   <li>
-                    • Preparing to contribute to a production codebase as a
-                    junior dev
+                    • Getting ready to contribute on a real product team
                   </li>
                 </ul>
               </div>
