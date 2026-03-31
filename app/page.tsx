@@ -3,8 +3,8 @@
 import { Suspense, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { SkillCard } from "./components/skillCard";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const sectionVariant = {
@@ -167,12 +167,14 @@ function HomePageContent() {
               </button>
             ))}
           </div>
-          <button
-            onClick={() => window.open("/Esteban_Machuca_Resume.pdf", "_blank")}
+          <Link
+            href="/resume"
+            target="_blank"
+            rel="noreferrer noopener"
             className="md:block rounded-full border border-yellow-400/60 bg-white/5 px-4 py-1 text-sm text-yellow-300 hover:bg-yellow-400 hover:text-black transition"
           >
             Resume
-          </button>
+          </Link>
         </nav>
       </header>
 
@@ -238,13 +240,14 @@ function HomePageContent() {
               >
                 Contact Me
               </button>
-              <a
-                href="/Esteban_Machuca_Resume.pdf"
-                download
+              <Link
+                href="/resume"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="rounded-full border border-yellow-400/60 bg-black/40 px-6 py-2 text-sm font-medium text-yellow-300 transition hover:bg-yellow-400 hover:text-black hover:cursor-pointer"
               >
-                Download Resume
-              </a>
+                View Resume
+              </Link>
             </div>
           </motion.div>
 
